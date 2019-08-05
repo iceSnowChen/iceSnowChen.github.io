@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="1234567891011121314151617181920&amp;gt;  @Bean&amp;gt;     public RedisTemplate&amp;lt;String, Serializable&amp;gt; redisTemplate(LettuceConnectionFactory redisConnectionFactory) &amp;#123;&amp;gt;         RedisTemplate&amp;lt;">
+<meta name="description" content="1234567891011121314151617181920mounted() &amp;#123;    clearInterval(this.intervalidList)    // 获取需要绑定的table    this.dom = this.$refs.alarmOf.bodyWrapper    this.dom.addEventListener(&apos;scroll&apos;, () =&amp;gt; &amp;#">
 <meta property="og:type" content="article">
-<meta property="og:title" content="fastjson反序列化LocalDateTime失败解决方案">
-<meta property="og:url" content="http://yoursite.com/2019/07/31/fastjson反序列化LocalDateTime失败解决方案/index.html">
+<meta property="og:title" content="vue滚动数据控制纵向滚动条">
+<meta property="og:url" content="http://yoursite.com/2019/08/05/vue滚动数据控制纵向滚动条/index.html">
 <meta property="og:site_name" content="技术成长中的点点滴滴">
-<meta property="og:description" content="1234567891011121314151617181920&amp;gt;  @Bean&amp;gt;     public RedisTemplate&amp;lt;String, Serializable&amp;gt; redisTemplate(LettuceConnectionFactory redisConnectionFactory) &amp;#123;&amp;gt;         RedisTemplate&amp;lt;">
+<meta property="og:description" content="1234567891011121314151617181920mounted() &amp;#123;    clearInterval(this.intervalidList)    // 获取需要绑定的table    this.dom = this.$refs.alarmOf.bodyWrapper    this.dom.addEventListener(&apos;scroll&apos;, () =&amp;gt; &amp;#">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-02T01:16:28.536Z">
+<meta property="og:updated_time" content="2019-08-05T03:06:24.552Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="fastjson反序列化LocalDateTime失败解决方案">
-<meta name="twitter:description" content="1234567891011121314151617181920&amp;gt;  @Bean&amp;gt;     public RedisTemplate&amp;lt;String, Serializable&amp;gt; redisTemplate(LettuceConnectionFactory redisConnectionFactory) &amp;#123;&amp;gt;         RedisTemplate&amp;lt;">
+<meta name="twitter:title" content="vue滚动数据控制纵向滚动条">
+<meta name="twitter:description" content="1234567891011121314151617181920mounted() &amp;#123;    clearInterval(this.intervalidList)    // 获取需要绑定的table    this.dom = this.$refs.alarmOf.bodyWrapper    this.dom.addEventListener(&apos;scroll&apos;, () =&amp;gt; &amp;#">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/07/31/fastjson反序列化LocalDateTime失败解决方案/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/05/vue滚动数据控制纵向滚动条/">
 
 
 
 
 
-  <title>fastjson反序列化LocalDateTime失败解决方案 | 技术成长中的点点滴滴</title>
+  <title>vue滚动数据控制纵向滚动条 | 技术成长中的点点滴滴</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/iceSnowChen.github.io/2019/07/31/fastjson反序列化LocalDateTime失败解决方案/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/iceSnowChen.github.io/2019/08/05/vue滚动数据控制纵向滚动条/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ice">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">fastjson反序列化LocalDateTime失败解决方案</h1>
+          <h1 class="post-title" itemprop="name headline">vue滚动数据控制纵向滚动条</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-31T14:21:57+08:00">
-                2019-07-31
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-05T11:04:27+08:00">
+                2019-08-05
               </time>
             
 
@@ -299,9 +299,8 @@
       
 
       
-        <blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&gt;  <span class="meta">@Bean</span></span><br><span class="line">&gt;     <span class="function"><span class="keyword">public</span> RedisTemplate&lt;String, Serializable&gt; <span class="title">redisTemplate</span><span class="params">(LettuceConnectionFactory redisConnectionFactory)</span> </span>&#123;</span><br><span class="line">&gt;         RedisTemplate&lt;String, Serializable&gt; template = <span class="keyword">new</span> RedisTemplate&lt;&gt;();</span><br><span class="line">&gt;         template.setKeySerializer(<span class="keyword">new</span> StringRedisSerializer());</span><br><span class="line">&gt;         template.setValueSerializer(genericJackson2JsonRedisSerializer());</span><br><span class="line">&gt;         template.setConnectionFactory(redisConnectionFactory);</span><br><span class="line">&gt;         <span class="keyword">return</span> template;</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt;     <span class="meta">@Bean</span></span><br><span class="line">&gt;     <span class="function"><span class="keyword">public</span> GenericJackson2JsonRedisSerializer <span class="title">genericJackson2JsonRedisSerializer</span><span class="params">()</span> </span>&#123;</span><br><span class="line">&gt;         ObjectMapper om = <span class="keyword">new</span> ObjectMapper();</span><br><span class="line">&gt;         om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);</span><br><span class="line">&gt;         <span class="comment">// 解决jackson2无法反序列化LocalDateTime的问题</span></span><br><span class="line">&gt;         om.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);</span><br><span class="line">&gt;         om.registerModule(<span class="keyword">new</span> JavaTimeModule());</span><br><span class="line">&gt;         om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL, JsonTypeInfo.As.PROPERTY);</span><br><span class="line">&gt;         <span class="keyword">return</span> <span class="keyword">new</span> GenericJackson2JsonRedisSerializer(om);</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">mounted() &#123;</span><br><span class="line">    clearInterval(<span class="keyword">this</span>.intervalidList)</span><br><span class="line">    <span class="comment">// 获取需要绑定的table</span></span><br><span class="line">    <span class="keyword">this</span>.dom = <span class="keyword">this</span>.$refs.alarmOf.bodyWrapper</span><br><span class="line">    <span class="keyword">this</span>.dom.addEventListener(<span class="string">'scroll'</span>, () =&gt; &#123;</span><br><span class="line">      <span class="comment">// 滚动距离</span></span><br><span class="line">      <span class="keyword">const</span> scrollTop = <span class="keyword">this</span>.dom.scrollTop</span><br><span class="line">      <span class="comment">// 变量windowHeight是可视区的高度</span></span><br><span class="line">      <span class="keyword">const</span> windowHeight = <span class="keyword">this</span>.dom.clientHeight || <span class="keyword">this</span>.dom.clientHeight</span><br><span class="line">      <span class="comment">// 变量scrollHeight是滚动条的总高度</span></span><br><span class="line">      <span class="keyword">const</span> scrollHeight = <span class="keyword">this</span>.dom.scrollHeight || <span class="keyword">this</span>.dom.scrollHeight</span><br><span class="line">      <span class="keyword">if</span> (scrollTop + windowHeight === scrollHeight) &#123;</span><br><span class="line">        <span class="comment">// 获取到的不是全部数据 当滚动到底部 继续获取新的数据</span></span><br><span class="line">        <span class="keyword">this</span>.dom.scrollTop = <span class="number">0</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">this</span>.intervalidList = setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>.dom.scrollTop++</span><br><span class="line">    &#125;, <span class="number">100</span>)</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -326,15 +325,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/iceSnowChen.github.io/2019/07/31/fastjson反序列化LocalDateTime失败解决方案/" rel="next" title="fastjson反序列化LocalDateTime失败解决方案">
+                <i class="fa fa-chevron-left"></i> fastjson反序列化LocalDateTime失败解决方案
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/iceSnowChen.github.io/2019/08/05/vue滚动数据控制纵向滚动条/" rel="prev" title="vue滚动数据控制纵向滚动条">
-                vue滚动数据控制纵向滚动条 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

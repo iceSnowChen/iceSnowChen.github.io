@@ -229,6 +229,127 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/iceSnowChen.github.io/2019/08/05/vue滚动数据控制纵向滚动条/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ice">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/iceSnowChen.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="技术成长中的点点滴滴">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/iceSnowChen.github.io/2019/08/05/vue滚动数据控制纵向滚动条/" itemprop="url">vue滚动数据控制纵向滚动条</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-05T11:04:27+08:00">
+                2019-08-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">mounted() &#123;</span><br><span class="line">    clearInterval(<span class="keyword">this</span>.intervalidList)</span><br><span class="line">    <span class="comment">// 获取需要绑定的table</span></span><br><span class="line">    <span class="keyword">this</span>.dom = <span class="keyword">this</span>.$refs.alarmOf.bodyWrapper</span><br><span class="line">    <span class="keyword">this</span>.dom.addEventListener(<span class="string">'scroll'</span>, () =&gt; &#123;</span><br><span class="line">      <span class="comment">// 滚动距离</span></span><br><span class="line">      <span class="keyword">const</span> scrollTop = <span class="keyword">this</span>.dom.scrollTop</span><br><span class="line">      <span class="comment">// 变量windowHeight是可视区的高度</span></span><br><span class="line">      <span class="keyword">const</span> windowHeight = <span class="keyword">this</span>.dom.clientHeight || <span class="keyword">this</span>.dom.clientHeight</span><br><span class="line">      <span class="comment">// 变量scrollHeight是滚动条的总高度</span></span><br><span class="line">      <span class="keyword">const</span> scrollHeight = <span class="keyword">this</span>.dom.scrollHeight || <span class="keyword">this</span>.dom.scrollHeight</span><br><span class="line">      <span class="keyword">if</span> (scrollTop + windowHeight === scrollHeight) &#123;</span><br><span class="line">        <span class="comment">// 获取到的不是全部数据 当滚动到底部 继续获取新的数据</span></span><br><span class="line">        <span class="keyword">this</span>.dom.scrollTop = <span class="number">0</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">this</span>.intervalidList = setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>.dom.scrollTop++</span><br><span class="line">    &#125;, <span class="number">100</span>)</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/iceSnowChen.github.io/2019/07/31/fastjson反序列化LocalDateTime失败解决方案/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -384,7 +505,7 @@
               
                 <a href="/iceSnowChen.github.io/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
