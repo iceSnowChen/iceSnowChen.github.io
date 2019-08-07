@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="1234567891011121314151617181920mounted() &amp;#123;  clearInterval(this.intervalidList)  // 获取需要绑定的table  this.dom = this.$refs.alarmOf.bodyWrapper  this.dom.addEventListener(&apos;scroll&apos;, () =&amp;gt; &amp;#123;">
+<meta name="description" content="采用系统定时任务的方式来分割日志  新建shell脚本，nginx_log_split.sh 1234567891011#!/bin/bash#分割nginx的日志文件# 设置日志文件存放目录LOGS_PATH=/home/web/water/nginx_access#备份文件名称YESTERDAY=$(date -d &quot;yesterday&quot; +%Y%m%d%H%M)#重命名日志文件mv $&amp;#1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue滚动数据控制纵向滚动条">
-<meta property="og:url" content="http://yoursite.com/2019/08/05/vue滚动数据控制纵向滚动条/index.html">
+<meta property="og:title" content="nginx日志分割">
+<meta property="og:url" content="http://yoursite.com/2019/08/07/nginx日志分割/index.html">
 <meta property="og:site_name" content="技术成长中的点点滴滴">
-<meta property="og:description" content="1234567891011121314151617181920mounted() &amp;#123;  clearInterval(this.intervalidList)  // 获取需要绑定的table  this.dom = this.$refs.alarmOf.bodyWrapper  this.dom.addEventListener(&apos;scroll&apos;, () =&amp;gt; &amp;#123;">
+<meta property="og:description" content="采用系统定时任务的方式来分割日志  新建shell脚本，nginx_log_split.sh 1234567891011#!/bin/bash#分割nginx的日志文件# 设置日志文件存放目录LOGS_PATH=/home/web/water/nginx_access#备份文件名称YESTERDAY=$(date -d &quot;yesterday&quot; +%Y%m%d%H%M)#重命名日志文件mv $&amp;#1">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-05T03:08:21.299Z">
+<meta property="og:updated_time" content="2019-08-07T08:11:35.886Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue滚动数据控制纵向滚动条">
-<meta name="twitter:description" content="1234567891011121314151617181920mounted() &amp;#123;  clearInterval(this.intervalidList)  // 获取需要绑定的table  this.dom = this.$refs.alarmOf.bodyWrapper  this.dom.addEventListener(&apos;scroll&apos;, () =&amp;gt; &amp;#123;">
+<meta name="twitter:title" content="nginx日志分割">
+<meta name="twitter:description" content="采用系统定时任务的方式来分割日志  新建shell脚本，nginx_log_split.sh 1234567891011#!/bin/bash#分割nginx的日志文件# 设置日志文件存放目录LOGS_PATH=/home/web/water/nginx_access#备份文件名称YESTERDAY=$(date -d &quot;yesterday&quot; +%Y%m%d%H%M)#重命名日志文件mv $&amp;#1">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/08/05/vue滚动数据控制纵向滚动条/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/07/nginx日志分割/">
 
 
 
 
 
-  <title>vue滚动数据控制纵向滚动条 | 技术成长中的点点滴滴</title>
+  <title>nginx日志分割 | 技术成长中的点点滴滴</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/iceSnowChen.github.io/2019/08/05/vue滚动数据控制纵向滚动条/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/iceSnowChen.github.io/2019/08/07/nginx日志分割/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ice">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">vue滚动数据控制纵向滚动条</h1>
+          <h1 class="post-title" itemprop="name headline">nginx日志分割</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-05T11:04:27+08:00">
-                2019-08-05
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-07T16:04:02+08:00">
+                2019-08-07
               </time>
             
 
@@ -299,8 +299,18 @@
       
 
       
-        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">mounted() &#123;</span><br><span class="line">  clearInterval(<span class="keyword">this</span>.intervalidList)</span><br><span class="line">  <span class="comment">// 获取需要绑定的table</span></span><br><span class="line">  <span class="keyword">this</span>.dom = <span class="keyword">this</span>.$refs.alarmOf.bodyWrapper</span><br><span class="line">  <span class="keyword">this</span>.dom.addEventListener(<span class="string">'scroll'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="comment">// 滚动距离</span></span><br><span class="line">    <span class="keyword">const</span> scrollTop = <span class="keyword">this</span>.dom.scrollTop</span><br><span class="line">    <span class="comment">// 变量windowHeight是可视区的高度</span></span><br><span class="line">    <span class="keyword">const</span> windowHeight = <span class="keyword">this</span>.dom.clientHeight || <span class="keyword">this</span>.dom.clientHeight</span><br><span class="line">    <span class="comment">// 变量scrollHeight是滚动条的总高度</span></span><br><span class="line">    <span class="keyword">const</span> scrollHeight = <span class="keyword">this</span>.dom.scrollHeight || <span class="keyword">this</span>.dom.scrollHeight</span><br><span class="line">    <span class="keyword">if</span> (scrollTop + windowHeight === scrollHeight) &#123;</span><br><span class="line">      <span class="comment">// 获取到的不是全部数据 当滚动到底部 继续获取新的数据</span></span><br><span class="line">      <span class="keyword">this</span>.dom.scrollTop = <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="keyword">this</span>.intervalidList = setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.dom.scrollTop++</span><br><span class="line">  &#125;, <span class="number">100</span>)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+        <p>采用系统定时任务的方式来分割日志</p>
+<ol>
+<li><p>新建shell脚本，nginx_log_split.sh</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment">#分割nginx的日志文件</span></span><br><span class="line"><span class="comment"># 设置日志文件存放目录</span></span><br><span class="line">LOGS_PATH=/home/web/water/nginx_access</span><br><span class="line"><span class="comment">#备份文件名称</span></span><br><span class="line">YESTERDAY=$(date -d <span class="string">"yesterday"</span> +%Y%m%d%H%M)</span><br><span class="line"><span class="comment">#重命名日志文件</span></span><br><span class="line">mv <span class="variable">$&#123;LOGS_PATH&#125;</span>/access.log <span class="variable">$&#123;LOGS_PATH&#125;</span>/access_<span class="variable">$&#123;YESTERDAY&#125;</span>.<span class="built_in">log</span></span><br><span class="line">mv <span class="variable">$&#123;LOGS_PATH&#125;</span>/error.log <span class="variable">$&#123;LOGS_PATH&#125;</span>/error_<span class="variable">$&#123;YESTERDAY&#125;</span>.<span class="built_in">log</span></span><br><span class="line"><span class="comment">##向nginx主进程发送USER1信号。USER1信号是重新打开日志文件，kill -USER1 信号解析归nginx所有</span></span><br><span class="line"><span class="built_in">kill</span> -USR1 $(cat /var/run/nginx.pid)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新建定时任务，执行crontab -e</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@dooviot nginx_access]# crontab -e</span><br><span class="line">0 0 * * * /home/web/water/nginx_access/nginx_log_split.sh</span><br></pre></td></tr></table></figure>
 
+
+
+</li>
+</ol>
 
       
     </div>
@@ -325,8 +335,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/iceSnowChen.github.io/2019/07/31/fastjson反序列化LocalDateTime失败解决方案/" rel="next" title="fastjson反序列化LocalDateTime失败解决方案">
-                <i class="fa fa-chevron-left"></i> fastjson反序列化LocalDateTime失败解决方案
+              <a href="/iceSnowChen.github.io/2019/08/07/vue接入腾讯防水墙验证码/" rel="next" title="vue接入腾讯防水墙验证码">
+                <i class="fa fa-chevron-left"></i> vue接入腾讯防水墙验证码
               </a>
             
           </div>
@@ -334,10 +344,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/iceSnowChen.github.io/2019/08/06/nginx配置HTTPS/" rel="prev" title="nginx配置HTTPS">
-                nginx配置HTTPS <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
