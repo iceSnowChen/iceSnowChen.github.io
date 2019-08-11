@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="1234567891011121314151617181920&amp;gt;     @Bean&amp;gt;     public RedisTemplate&amp;lt;String, Serializable&amp;gt; redisTemplate(LettuceConnectionFactory redisConnectionFactory) &amp;#123;&amp;gt;         RedisTemplate&amp;">
+<meta name="description" content="启动zookeeper: docker run -p 2181:2181 –name zookeeper –restart always -d zookeeper  通过客户端连接已运行的zookeeper: docker run -it –rm –link zookeeper:zookeeper zookeeper zkCli.sh -server zookeeper  进入zookeeper">
 <meta property="og:type" content="article">
-<meta property="og:title" content="fastjson反序列化LocalDateTime失败解决方案">
-<meta property="og:url" content="http://yoursite.com/2019/07/31/fastjson反序列化LocalDateTime失败解决方案/index.html">
+<meta property="og:title" content="docker安装zookeeper步骤">
+<meta property="og:url" content="http://yoursite.com/2019/08/11/docker安装zookeeper步骤/index.html">
 <meta property="og:site_name" content="技术成长中的点点滴滴">
-<meta property="og:description" content="1234567891011121314151617181920&amp;gt;     @Bean&amp;gt;     public RedisTemplate&amp;lt;String, Serializable&amp;gt; redisTemplate(LettuceConnectionFactory redisConnectionFactory) &amp;#123;&amp;gt;         RedisTemplate&amp;">
+<meta property="og:description" content="启动zookeeper: docker run -p 2181:2181 –name zookeeper –restart always -d zookeeper  通过客户端连接已运行的zookeeper: docker run -it –rm –link zookeeper:zookeeper zookeeper zkCli.sh -server zookeeper  进入zookeeper">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-09T12:46:04.241Z">
+<meta property="og:updated_time" content="2019-08-11T14:13:21.292Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="fastjson反序列化LocalDateTime失败解决方案">
-<meta name="twitter:description" content="1234567891011121314151617181920&amp;gt;     @Bean&amp;gt;     public RedisTemplate&amp;lt;String, Serializable&amp;gt; redisTemplate(LettuceConnectionFactory redisConnectionFactory) &amp;#123;&amp;gt;         RedisTemplate&amp;">
+<meta name="twitter:title" content="docker安装zookeeper步骤">
+<meta name="twitter:description" content="启动zookeeper: docker run -p 2181:2181 –name zookeeper –restart always -d zookeeper  通过客户端连接已运行的zookeeper: docker run -it –rm –link zookeeper:zookeeper zookeeper zkCli.sh -server zookeeper  进入zookeeper">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/07/31/fastjson反序列化LocalDateTime失败解决方案/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/11/docker安装zookeeper步骤/">
 
 
 
 
 
-  <title>fastjson反序列化LocalDateTime失败解决方案 | 技术成长中的点点滴滴</title>
+  <title>docker安装zookeeper步骤 | 技术成长中的点点滴滴</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/iceSnowChen.github.io/2019/07/31/fastjson反序列化LocalDateTime失败解决方案/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/iceSnowChen.github.io/2019/08/11/docker安装zookeeper步骤/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ice">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">fastjson反序列化LocalDateTime失败解决方案</h1>
+          <h1 class="post-title" itemprop="name headline">docker安装zookeeper步骤</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-31T14:21:57+08:00">
-                2019-07-31
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-11T22:05:05+08:00">
+                2019-08-11
               </time>
             
 
@@ -299,9 +299,20 @@
       
 
       
-        <blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&gt;     <span class="meta">@Bean</span></span><br><span class="line">&gt;     <span class="function"><span class="keyword">public</span> RedisTemplate&lt;String, Serializable&gt; <span class="title">redisTemplate</span><span class="params">(LettuceConnectionFactory redisConnectionFactory)</span> </span>&#123;</span><br><span class="line">&gt;         RedisTemplate&lt;String, Serializable&gt; template = <span class="keyword">new</span> RedisTemplate&lt;&gt;();</span><br><span class="line">&gt;         template.setKeySerializer(<span class="keyword">new</span> StringRedisSerializer());</span><br><span class="line">&gt;         template.setValueSerializer(genericJackson2JsonRedisSerializer());</span><br><span class="line">&gt;         template.setConnectionFactory(redisConnectionFactory);</span><br><span class="line">&gt;         <span class="keyword">return</span> template;</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt;     <span class="meta">@Bean</span></span><br><span class="line">&gt;     <span class="function"><span class="keyword">public</span> GenericJackson2JsonRedisSerializer <span class="title">genericJackson2JsonRedisSerializer</span><span class="params">()</span> </span>&#123;</span><br><span class="line">&gt;         ObjectMapper om = <span class="keyword">new</span> ObjectMapper();</span><br><span class="line">&gt;         om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);</span><br><span class="line">&gt;         <span class="comment">// 解决jackson2无法反序列化LocalDateTime的问题</span></span><br><span class="line">&gt;         om.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);</span><br><span class="line">&gt;         om.registerModule(<span class="keyword">new</span> JavaTimeModule());</span><br><span class="line">&gt;         om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL, JsonTypeInfo.As.PROPERTY);</span><br><span class="line">&gt;         <span class="keyword">return</span> <span class="keyword">new</span> GenericJackson2JsonRedisSerializer(om);</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
+        <ul>
+<li><p>启动zookeeper:</p>
+<p>docker run -p 2181:2181 –name zookeeper –restart always -d zookeeper</p>
+</li>
+<li><p>通过客户端连接已运行的zookeeper:</p>
+<p>docker run -it –rm –link zookeeper:zookeeper zookeeper zkCli.sh -server zookeeper</p>
+</li>
+<li><p>进入zookeeper容器</p>
+<p>docker exec -it zookeeper bash</p>
+</li>
+<li><p>Docker容器中的另一个应用程序连接到Zookeeper:</p>
+<p>docker run –name someApp –link zookeeper:zookeeper -d application-that-uses-zookeeper</p>
+</li>
+</ul>
 
       
     </div>
@@ -326,15 +337,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/iceSnowChen.github.io/2019/08/09/nginx执行的11个阶段/" rel="next" title="nginx执行的11个阶段">
+                <i class="fa fa-chevron-left"></i> nginx执行的11个阶段
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/iceSnowChen.github.io/2019/08/05/vue滚动数据控制纵向滚动条/" rel="prev" title="vue滚动数据控制纵向滚动条">
-                vue滚动数据控制纵向滚动条 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

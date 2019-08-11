@@ -229,6 +229,262 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/iceSnowChen.github.io/2019/08/11/docker安装zookeeper步骤/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ice">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/iceSnowChen.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="技术成长中的点点滴滴">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/iceSnowChen.github.io/2019/08/11/docker安装zookeeper步骤/" itemprop="url">docker安装zookeeper步骤</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-11T22:05:05+08:00">
+                2019-08-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li><p>启动zookeeper:</p>
+<p>docker run -p 2181:2181 –name zookeeper –restart always -d zookeeper</p>
+</li>
+<li><p>通过客户端连接已运行的zookeeper:</p>
+<p>docker run -it –rm –link zookeeper:zookeeper zookeeper zkCli.sh -server zookeeper</p>
+</li>
+<li><p>进入zookeeper容器</p>
+<p>docker exec -it zookeeper bash</p>
+</li>
+<li><p>Docker容器中的另一个应用程序连接到Zookeeper:</p>
+<p>docker run –name someApp –link zookeeper:zookeeper -d application-that-uses-zookeeper</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/iceSnowChen.github.io/2019/08/09/nginx执行的11个阶段/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ice">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/iceSnowChen.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="技术成长中的点点滴滴">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/iceSnowChen.github.io/2019/08/09/nginx执行的11个阶段/" itemprop="url">nginx执行的11个阶段</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-09T14:02:09+08:00">
+                2019-08-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="../img/1565331118625.png" alt="1565331118625"></p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">location</span> /test &#123;</span><br><span class="line">   <span class="comment">#set属于rewrite阶段的命令</span></span><br><span class="line">   <span class="attribute">set</span> <span class="variable">$a</span> <span class="number">100</span></span><br><span class="line">   <span class="comment">#echo属于content阶段的命令</span></span><br><span class="line">   echo <span class="string">'<span class="variable">$a</span>'</span></span><br><span class="line">   set <span class="variable">$a</span> <span class="number">200</span></span><br><span class="line">   echo <span class="string">'<span class="variable">$a</span>'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述输出结果：200, 200</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/iceSnowChen.github.io/2019/08/07/nginx日志分割/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -552,7 +808,7 @@
       
         
           
-            <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">   <span class="attribute">listen</span> <span class="number">443</span>;</span><br><span class="line">   <span class="attribute">server_name</span> water.dooviot.com;</span><br><span class="line">   <span class="attribute">access_log</span>  /home/web/water/nginx_access/access.log water;</span><br><span class="line">   <span class="attribute">ssl</span> <span class="literal">on</span>;</span><br><span class="line">   <span class="attribute">ssl_certificate</span>  /home/web/water/vue_web/cert/2614978_water.dooviot.com.pem;</span><br><span class="line">   <span class="attribute">ssl_certificate_key</span> /home/web/water/vue_web/cert/2614978_water.dooviot.com.key;</span><br><span class="line">   <span class="attribute">ssl_session_timeout</span> <span class="number">5m</span>;</span><br><span class="line">   <span class="attribute">ssl_ciphers</span> ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;</span><br><span class="line">   <span class="attribute">ssl_protocols</span> TLSv1 TLSv1.<span class="number">1</span> TLSv1.<span class="number">2</span>;</span><br><span class="line">   <span class="attribute">ssl_prefer_server_ciphers</span> <span class="literal">on</span>;</span><br><span class="line">   <span class="attribute">location</span> / &#123;</span><br><span class="line">      <span class="attribute">root</span> /home/web/water/vue_web/dist;</span><br><span class="line">      <span class="attribute">index</span> index.html;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="attribute">location</span> /admin &#123;</span><br><span class="line">      <span class="attribute">proxy_pass</span> http://39.98.70.63:9015;</span><br><span class="line">      <span class="comment"># 以下配置是获取客户端真实的ip地址</span></span><br><span class="line">      <span class="comment"># X-Real-IP            客户端或上一级代理ip</span></span><br><span class="line">      <span class="comment"># X-Real-Port          客户端或上一级端口</span></span><br><span class="line">      <span class="comment"># X-Forwarded-For      包含了客户端和各级代理ip的完整ip链路</span></span><br><span class="line">      <span class="attribute">proxy_set_header</span> X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">      <span class="attribute">proxy_set_header</span> X-Real-Port <span class="variable">$remote_port</span>;</span><br><span class="line">      <span class="attribute">proxy_set_header</span> X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="attribute">location</span> /developer &#123;</span><br><span class="line">      <span class="attribute">proxy_pass</span> http://39.98.70.63:9015;</span><br><span class="line">      <span class="comment"># 以下配置是获取客户端真实的ip地址</span></span><br><span class="line">      <span class="comment"># X-Real-IP            客户端或上一级代理ip</span></span><br><span class="line">      <span class="comment"># X-Real-Port          客户端或上一级端口</span></span><br><span class="line">      <span class="comment"># X-Forwarded-For      包含了客户端和各级代理ip的完整ip链路</span></span><br><span class="line">      <span class="attribute">proxy_set_header</span> X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">      <span class="attribute">proxy_set_header</span> X-Real-Port <span class="variable">$remote_port</span>;</span><br><span class="line">      <span class="attribute">proxy_set_header</span> X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">  <span class="attribute">listen</span> <span class="number">9016</span>;</span><br><span class="line">  <span class="attribute">server_name</span> <span class="number">39.98.70.63</span>;</span><br><span class="line">  <span class="comment"># 301是临时重定向，还是由nginx进行重定向，浏览器继续把请求发送到原地址</span></span><br><span class="line">  <span class="comment"># 302是永久重定向,由浏览器直接把请求发送到重定向后的地址</span></span><br><span class="line">  <span class="attribute">return</span> <span class="number">302</span> https://water.dooviot.com<span class="variable">$request_uri</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"> <span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">443</span>;</span><br><span class="line">    <span class="attribute">server_name</span> water.dooviot.com;</span><br><span class="line">    <span class="attribute">access_log</span>  /home/web/water/nginx_access/access.log water;</span><br><span class="line">    <span class="attribute">ssl</span> <span class="literal">on</span>;</span><br><span class="line">    <span class="attribute">ssl_certificate</span>  /home/web/water/vue_web/cert/2614978_water.dooviot.com.pem;</span><br><span class="line">    <span class="attribute">ssl_certificate_key</span> /home/web/water/vue_web/cert/2614978_water.dooviot.com.key;</span><br><span class="line">    <span class="attribute">ssl_session_timeout</span> <span class="number">5m</span>;</span><br><span class="line">    <span class="attribute">ssl_ciphers</span> ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;</span><br><span class="line">    <span class="attribute">ssl_protocols</span> TLSv1 TLSv1.<span class="number">1</span> TLSv1.<span class="number">2</span>;</span><br><span class="line">    <span class="attribute">ssl_prefer_server_ciphers</span> <span class="literal">on</span>;</span><br><span class="line">    <span class="attribute">location</span> / &#123;</span><br><span class="line">       <span class="attribute">root</span> /home/web/water/vue_web/dist;</span><br><span class="line">       <span class="attribute">index</span> index.html;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="attribute">location</span> /admin &#123;</span><br><span class="line">       <span class="attribute">proxy_pass</span> http://39.98.70.63:9015;</span><br><span class="line">       <span class="comment"># 以下配置是获取客户端真实的ip地址</span></span><br><span class="line">       <span class="comment"># X-Real-IP            客户端或上一级代理ip</span></span><br><span class="line">       <span class="comment"># X-Real-Port          客户端或上一级端口</span></span><br><span class="line">       <span class="comment"># X-Forwarded-For      包含了客户端和各级代理ip的完整ip链路</span></span><br><span class="line">       <span class="attribute">proxy_set_header</span> X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">       <span class="attribute">proxy_set_header</span> X-Real-Port <span class="variable">$remote_port</span>;</span><br><span class="line">       <span class="attribute">proxy_set_header</span> X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="attribute">location</span> /developer &#123;</span><br><span class="line">       <span class="attribute">proxy_pass</span> http://39.98.70.63:9015;</span><br><span class="line">       <span class="comment"># 以下配置是获取客户端真实的ip地址</span></span><br><span class="line">       <span class="comment"># X-Real-IP            客户端或上一级代理ip</span></span><br><span class="line">       <span class="comment"># X-Real-Port          客户端或上一级端口</span></span><br><span class="line">       <span class="comment"># X-Forwarded-For      包含了客户端和各级代理ip的完整ip链路</span></span><br><span class="line">       <span class="attribute">proxy_set_header</span> X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">       <span class="attribute">proxy_set_header</span> X-Real-Port <span class="variable">$remote_port</span>;</span><br><span class="line">       <span class="attribute">proxy_set_header</span> X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="section">server</span> &#123;</span><br><span class="line">   <span class="attribute">listen</span> <span class="number">9016</span>;</span><br><span class="line">   <span class="attribute">server_name</span> <span class="number">39.98.70.63</span>;</span><br><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span><br><span class="line">   <span class="comment"># 301是临时重定向，还是由nginx进行重定向，浏览器继续把请求发送到原地址</span></span><br><span class="line">   <span class="comment"># 302是永久重定向,由浏览器直接把请求发送到重定向后的地址</span></span><br><span class="line">=======</span><br><span class="line">   <span class="comment">#302是临时重定向，还是由nginx进行重定向，浏览器继续把请求发送到原地址</span></span><br><span class="line">   <span class="comment">#301是永久重定向,由浏览器直接把请求发送到重定向后的地址</span></span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; 662345389875db991ade53077755a261f8d7dfe2</span><br><span class="line">   <span class="attribute">return</span> <span class="number">302</span> https://water.dooviot.com<span class="variable">$request_uri</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 
 
           
@@ -878,7 +1134,7 @@
               
                 <a href="/iceSnowChen.github.io/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
